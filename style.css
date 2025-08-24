@@ -3,3 +3,7 @@ p{
     text-align: justify;
     margin: 20px;
 }
+
+body{
+    background-color: lightslategray;
+}
