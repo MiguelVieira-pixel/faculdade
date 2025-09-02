@@ -7,7 +7,7 @@ int main() {
 
     printf("\n Digite a quantidade de fitas no total: ");
     scanf("%d", & quantidadeFitas);
-    printf("\n digite o valor do aluguel das fitas: ");
+    printf("\n Digite o valor do aluguel das fitas: ");
     scanf("%f", & valorAluguel);
     fitasAlugadas = quantidadeFitas / 3;
 
