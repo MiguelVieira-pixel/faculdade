@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    int quantidadeFitas, totalFita = 0, fitasAlugadas = 0, fitasAtrasadas = 0, fitaEstragada = 0, reposicao = 0;
+    int quantidadeFitas, totalFitas = 0, fitasAlugadas = 0, fitasAtrasadas = 0, fitaEstragada = 0, reposicao = 0;
     float valorAluguel, faturamentoMensal = 0, faturamentoAnual = 0, multaMes = 0, multaAno = 0;
 
     printf("\n Digite a quantidade de fitas no total: ");
@@ -37,6 +37,6 @@ int main() {
     printf("\n Quantidade de fitas de reposicao = %d", reposicao);
 
     // fita total da locadora no final do ano
-    totalFita = quantidadeFitas - fitaEstragada + reposicao;
-    printf("\n Quantidade de fitas que a locadora tera no final do ano = %d", totalFita);
+    totalFitas = quantidadeFitas - fitaEstragada + reposicao;
+    printf("\n Quantidade de fitas que a locadora tera no final do ano = %d", totalFitas);
 }
