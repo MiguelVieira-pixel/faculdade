@@ -39,4 +39,6 @@ int main() {
     // fita total da locadora no final do ano
     totalFitas = quantidadeFitas - fitaEstragada + reposicao;
     printf("\n Quantidade de fitas que a locadora tera no final do ano = %d", totalFitas);
+    system("pause > null");
+    return 0;
 }
