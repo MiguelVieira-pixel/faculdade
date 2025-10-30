@@ -1,0 +1,107 @@
+body {
+  background: linear-gradient(#f7f9fb, #ffffff);
+  color: #333;
+  padding: 18px;
+}
+
+header,
+section,
+footer {
+  max-width: 900px;
+  margin: 10px auto;
+  background: #fff;
+  border: 1px solid #e6eef5;
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.Titulo {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  background: #3a9ad9;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+figure {
+  display: block;
+  text-align: center; 
+  margin: 10px auto; 
+}
+
+figure img {
+  width: 220px;
+  height: auto;
+  border-radius: 6px;
+  border: 8px solid #FFD700;
+  display: inline-block; 
+}
+
+figcaption {
+  font-size: 20px;
+  color: #666;
+  text-align: center;
+}
+
+header nav ul li{
+  display: inline-block;
+  text-align: center;
+  margin-inline-start: 110px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #ffffff;
+  background: #2c3e50;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.Ingredientes h1,
+.preparo h1 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+nav ul,
+nav ol {
+  margin-left: 18px;
+  margin-top: 8px;
+}
+
+nav li {
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.Ingredientes ul li,
+.preparo ul li {
+  background: #b1e8fa;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px dashed #c7e9fa;
+}
+
+.rodape {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.rodape a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+small {
+  display: block;
+  margin-top: 6px;
+}
