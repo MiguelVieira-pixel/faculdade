@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="titulo">
+        <h1>Escola Virtual</h1>
+        <h3>Formulário de Pré-Matrícula</h3>
+    </div>
+    <hr>
+    <div class="dados_pessoais">
+        <h4>Dados pessoais: </h4>
+
+        <form action="processar_dados.html" method="get"></form>
+            <label for="Nome">Nome do Aluno: </label>
+            <input type="text" name="Nome" id="Nome" required>
+            <br>
+            <br>
+
+            <label for="nasc">Nascimento (dd/mm/aaaa): </label>
+            <input type="date" name="nasc" id="nasc">
+            <br>
+            <br>
+
+            <label for="pais">Nome da Mãe: </label>
+            <input type="text" name="pais" id="pais">
+            <br>
+            <br>
+            <label for="pais">Nome do Pai: </label>
+            <input type="text" name="pais" id="pais">
+            <br>
+            <br>
+
+            <div id="tel">
+                <label for="ddd">Telefone: DDD(</label>
+                <input type="tel" size="1" name="ddd" id="ddd">)
+                <label for="tel">Tel: </label>
+                <input type="tel" size="6" name="tel" id="tel">
+                <label for="ramal">Ramal:</label>
+                <input type="text" size="2" name="ramal" id="ramal">
+                <br>
+                <br>
+
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email">
+                <br>
+                <br>
+                <label for="senha">Senha: </label>
+                <input type="password" name="senha" id="senha">
+            </div>
+    </div>
+
+    <div class="checkbox">
+        <h4>Informações da Matrícula: </h4>
+        <div id="form_checkbox">
+            <form action="processar_dados.html" method="get">
+            <div id="serie">
+            <label for="opcoes">Série: </label>
+            <select id="opcoes">
+                <option value="pre-escolar">pré-escolar</option>
+                <option value="fundamental">fundamental</option>
+                <option value="medio">médio</option>
+                <option value="superior">superior</option>
+            </select>
+            </div>
+            <div id="turno">
+            turno: <br>
+                <input type="radio" name="turno" id="turno" value="manha"> Manhã <br>
+                <input type="radio" name="turno" id="turno" value="tarde"> Tarde <br>
+            </div>
+            <div id="ativi">
+                Atividades Extracurriculares: <br>
+                <input type="checkbox" name="ativi" id="ativi" value="informatica"> Informática <br>
+                <input type="checkbox" name="ativi" id="ativi" value="musica"> Música <br>
+                <input type="checkbox" name="ativi" id="ativi" value="balet"> Balet <br>
+                <input type="checkbox" name="ativi" id="ativi" value="pintura"> Pintura <br>
+                <input type="checkbox" name="ativi" id="ativi" value="judô"> Judô <br>
+                <input type="checkbox" name="ativi" id="ativi" value="futebol"> Futebol <br>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <button type="submit">Enviar Formulário</button>
+    <button onclick="window.location.href='index.html';">Limpar Campos</button>
+    
+</body>
+</html>

@@ -25,8 +25,8 @@ main(){
             system("cls");
 
             while(sairam > pessoas){  //não pode sair mais do que existe no elevador
-                printf("\n Não pode sair mais pessoas do que tem no elevador.");
-                printf("Quantas pessoas sairam: ");
+                printf("\n Nao pode sair mais pessoas do que tem no elevador.");
+                printf("\n Quantas pessoas sairam: ");
                 scanf("%d", &sairam);
                 system("cls");
             }
