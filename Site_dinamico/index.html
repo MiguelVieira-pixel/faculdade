@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+    <head>
+        <script>
+            var name="Largatixq";
+            window.alert(name);
+            document.write("Boa noite")
+        </script>
+    </head>
+<body>
+
+    <div class="titulo">
+        <h1>CADASTRO</h1>
+    </div>
+    <div class="Formulario">
+        <div id="nome">
+            <form action="" method="post">
+            <label for="nome">Nome do Aluno: </label>
+            <input type="text" size="40" id="name">
+            </form>
+        </div>
+
+        <br>
+
+        <div id="cpf">
+            <form action="" method="post">
+                <label for="cpf">CPF: </label>
+                <input type="text" size="20" id="cpf">
+            </form>
+        </div>
+
+        <br>
+
+        <div id="email">
+            <form action="" method="post">
+                <label for="email">Email: </label>
+                <input type="email" size="40" id="email">
+            </form>
+        </div>
+
+        <br>
+
+        <input type="submit" value="Enviar">
+    </div>
+
+    <p id="meupar"> . . . . . . . . . . . . . . . . . . . . </p>
+
+    <script>
+        var digitado = document.getElementById("name").value;
+        if(digitado == ""){
+            document.write("Não digitou o nome.");
+            document.getElementById("meupar").innerHTML = "Digite o nome para continuar.";
+        }
+        else{
+            document.write("Boa noite, " + digitado);
+            document.getElementById("meupar").innerHTML = "Obrigado por cadastrar-se, " + digitado + ".";
+        }
+    </script>
+
+
+</body>
+</html>

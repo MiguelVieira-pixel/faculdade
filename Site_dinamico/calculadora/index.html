@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+</head>
+<body>
+    <h1>CALCULADORA</h1>
+
+    <input type="text" name="num1" id="num1" size="3">
+    <form action="" method="post">
+        <label for="opcoes">Operador: </label>
+        <select id="opcoes">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </form>
+
+     <input type="text" name="num2" id="num2" size="3">
+
+    <script>
+        var numero1 = document.getElementById("num1").value;
+        var numero2 = document.getElementById("num2").value;
+        var soma = numero1 + numero2
+        document.write(soma);
+    </script>
+
+   
+
+
+</body>
+</html>
