@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function toggle(parametro){
+            // window.alert("alert")
+            var par=document.getElementById("meupar");
+            switch(parametro){
+                case 1: par.style.display = "none";
+                    break;
+                case 2: par.style.display = "block";
+                    break;
+            }
+        }
+    </script>
+
+    <h2>Vale um titulo</h2>
+    <p id="meupar">Isto é um parágrafo</p>
+    <button type="button" onclick="toggle(1)">none</button>
+    <button type="button" onclick="toggle(2)">block</button>
+</body>
+</html>

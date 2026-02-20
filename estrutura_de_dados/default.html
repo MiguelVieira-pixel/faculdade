@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Teste</h2>
+
+
+
+    <form method="post" id="form">
+        Nome <input type="text" size="30" id="nome"> <br>
+        Idade <input type="number" size="3" id="idade"> <br>
+        <input type="submit">
+    </form>
+
+    <script>
+        form.addEventListener("submit", function(e)){
+    var w_nome = document.getElementById("nome"),value
+    var w_idade = document.getElementById("idade").value
+    var form = document.getElementById("form").value    
+    doucment.write(typeof(w_nome) + "<br>")
+    doucment.write(typeof(w_idade) + "<br>")
+    }
+</script>
+</body>
+</html>
