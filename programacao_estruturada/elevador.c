@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-main(){
-    int pessoas, entraram, andar, sairam, limitePessoas = 0;
+int main(void){
+    int pessoas = 0, entraram = 0, andar = 0, sairam = 0, limitePessoas = 0;
 
     printf("\n Quantos andares tem esse predio: ");
     scanf("%d", &andar);
@@ -46,4 +46,5 @@ main(){
             system("pause>null");  
         }
     }
+    return 0;
 }
