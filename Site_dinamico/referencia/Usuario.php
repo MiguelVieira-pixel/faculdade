@@ -26,6 +26,7 @@
         function mostraVeiculos() {
             echo "\n<table border>\n";
             echo "<tr style='color:red; font-family : arial; border: 1px solid black;'><th>ID</th><th>Marca</th><th>Modelo</th><th>Ano</th></tr>\n";
+            $i = 0;
             while($i < count($this->veiculos)) {
                 $this->veiculos[$i]->display();
                 $i++;

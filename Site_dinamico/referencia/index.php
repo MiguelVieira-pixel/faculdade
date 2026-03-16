@@ -6,5 +6,5 @@
     $us->addVeiculo(new Veiculo("1", "Honda", "XRE 190", "2019"));
     $us->addVeiculo(new Veiculo("2", "Volkswagen", "Gol", "2020"));
 
-    $us->display();
+    $us->__display();
 ?>
