@@ -27,30 +27,36 @@ int inserir(FilaMus *f, Musica m){
     if(filaCheia(*f))
         return -1;
     else{
-        f->vetMus[f->final]=m;
+        f->vetMus[f->final] = m;
         f->final = f->final + 1;
+        f->tamanho++;
         return 0;
     }
 }
 
-int retirar(FilaMus *f, Musica m){
-    if(filaVazia)
+// CORREÇÃO: era filaVazia sem (), e a cópia estava invertida
+int retirar(FilaMus *f, Musica *m){
+    if(filaVazia(*f))
         return -1;
     else{
-        f->vetMus[f->inicial]=m;
+        *m = f->vetMus[f->inicial];  // copia a música retirada para *m
         f->inicial = f->inicial + 1;
+        f->tamanho--;
         return 0;
     }
 }
 
-void imprimir_musica(FilaMus f, Musica m){
+void imprimir_musica(FilaMus f){
     if(filaVazia(f)){
-        printf("\nPlaylist está vazia.");
+        printf("\nPlaylist esta vazia.\n");
     }
     else{
+        printf("\n--- Playlist (%d musica(s)) ---\n", f.tamanho);
         for(int i = f.inicial; i < f.final; i++){
-            printf("\n titulo: %s \n interprete: %s", f.vetMus[i].titulo, f.vetMus[i].interprete);
-            // printf("-" * 15);
+            printf("\n[%d] Titulo:     %s", i - f.inicial + 1, f.vetMus[i].titulo);
+            printf("\n    Interprete: %s", f.vetMus[i].interprete);
+            printf("\n    Caminho:    %s", f.vetMus[i].caminho);  // ADICIONADO
+            printf("\n    ----------------------------------------");
         }
     }
     printf("\n");
@@ -58,52 +64,58 @@ void imprimir_musica(FilaMus f, Musica m){
 }
 
 int main(){
-    //final:onde vai ser armazenada a proxima música (se fila não cheia) / inicio = 0
-    //incial: onde está a próxima música a ser retirada (se fila não vazia) inicio = 0
     FilaMus fila;
     Musica m;
     fila.inicial = 0;
     fila.final = 0;
+    fila.tamanho = 0;  // CORREÇÃO: inicializar tamanho
     int opcao;
-
 
     do{
         printf("\n--- MENU PLAYLIST ---\n");
-        printf("\n Digite a opcao [1] para inserir uma musica na playlist.");
-        printf("\n Digite a opcao [2] para remover uma musica na playlist.");
-        printf("\n Digite a opcao [3] para mostrar as musica(s) na playlist.");
-        printf("\n Digite a opcao [4] para sair.");
-        printf("\n");
+        printf("\n [1] Inserir musica");
+        printf("\n [2] Remover musica");
+        printf("\n [3] Mostrar playlist");
+        printf("\n [4] Sair");
+        printf("\n\n Opcao: ");
         scanf("%d", &opcao);
 
         switch(opcao){
             case 1:
                 printf("\n Digite o titulo da musica: ");
-                scanf(" %[^\n]", &m.titulo);
+                scanf(" %[^\n]", m.titulo);
                 printf("\n Digite o interprete da musica: ");
-                scanf(" %[^\n]", &m.interprete);
+                scanf(" %[^\n]", m.interprete);
+                printf("\n Digite o caminho do arquivo: ");  // ADICIONADO
+                scanf(" %[^\n]", m.caminho);                // ADICIONADO
                 if(inserir(&fila, m) == 0)
-                    printf("\n musica adicionada.");
+                    printf("\n Musica adicionada com sucesso!");
+                else
+                    printf("\n Playlist cheia!");
                 break;
 
             case 2:
-                if(retirar(&fila, m) == 0)
-                    printf("\n Musica removida.");
+                if(retirar(&fila, &m) == 0)  // CORREÇÃO: passa &m
+                    printf("\n Musica removida: %s", m.titulo);
+                else
+                    printf("\n Playlist vazia!");
                 break;
 
             case 3:
-                imprimir_musica(fila, m);
+                imprimir_musica(fila);
                 break;
             
             case 4:
-                printf("\n Adios.");
+                printf("\n Adios.\n");
                 break;
 
             default:
-                printf("\n Opcao nao identificado.");
+                printf("\n Opcao nao identificada.");
                 break;
         }
-
+        printf("\n");
+        system("pause");
+        system("cls");
 
     } while(opcao != 4);
     
