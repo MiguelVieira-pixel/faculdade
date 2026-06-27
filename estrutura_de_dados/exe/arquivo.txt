@@ -1,0 +1,5 @@
+001 Porca 1.20
+002 Arruela 1.30
+003 Parafuso 0.90
+004 Abracadeira 1.00
+005 Esticador 3.60

@@ -23,16 +23,16 @@ void init(Arvore * a){
 }
 	
 void inserir(Arvore * a, Pessoa p){
-	if(*a == NULL){ // nó vazio
+	if(*a == NULL){ // nï¿½ vazio
 		*a = (Pessoa *)malloc(sizeof(Pessoa));
 		p.esq = NULL;
 		p.dir = NULL;
 		**a = p;
 //			mostra(**a);
 	}
-	else{ //nó ocupado
+	else{ //nï¿½ ocupado
 		if(strcmp((*a)->cpf, p.cpf) == 0)
-			return -1; //ERRO, cpf já cadastrado
+			return -1; //ERRO, cpf jï¿½ cadastrado
 			else if(strcmp((*a)->cpf, p.cpf) < 0)
 				inserir((Arvore *) &(*a)->dir, p);
 			else
@@ -52,9 +52,13 @@ void mostra(Pessoa p){
 	printf("\n CPF[%s], %s, %s, %c\n", p.cpf, p.nome, p.apelido, p.sexo);
 }
 
+
+
 int main(){
-//	este programa implementa uma árvore binária de PESSOAS, em que a chave de comparação é o CPF. Teremos aqui as funções de inserção,
+//	este programa implementa uma ï¿½rvore binï¿½ria de PESSOAS, em que a chave de comparaï¿½ï¿½o ï¿½ o CPF. Teremos aqui as funï¿½ï¿½es de inserï¿½ï¿½o,
 //	visitas e busca
+	int opcao;
+
 	Arvore seringueira;
 	init(&seringueira);
 	Pessoa p1 = {"123", "Alano", "Feio", 'M'};
@@ -67,6 +71,13 @@ int main(){
 	inserir(&seringueira, p1);
 	inserir(&seringueira, p2);
 	inserir(&seringueira, p5);
+	do{
+		switch(opcao){
+			case 1:
+			printf("\n Digite o cpf: ");
+			
+		}
+	}
 	ordem(seringueira);
 	return 0;	
 }
