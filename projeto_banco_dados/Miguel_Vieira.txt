@@ -1,0 +1,25 @@
+# 1. Apresentar o departamento e o ramal do funcionário 'Luiz Oliveira'.
+SELECT f.nome, d.nome, d.ramal from  funcionario f inner join departamento d on f.cod_depto = d.cod_depto where f.nome = 'Luiz Oliveira';
+
+# 2. Apresentar o nome e o departamento dos funcionário com cargo de gerente.
+SELECT f.nome, d.nome, d.ramal from  funcionario f inner join departamento d on f.cod_depto = d.cod_depto where f.cargo = 'gerente';
+
+# 3. Apresentar o nome, cargo e departamento dos funcionários admitidos a partir de 15/01/2019.
+SELECT f.nome, f.cargo, d.nome, f.data_admissao from funcionario f inner join departamento d on f.cod_depto = d.cod_depto where f.data_admissao > '2019-01-15';
+
+# 4. Apresentar o nome, cargo e departamento dos funcionários admitidos entre 2020 e 2022.
+SELECT f.nome, f.cargo, d.nome, f.data_admissao from funcionario f inner join departamento d on f.cod_depto = d.cod_depto 
+where f.data_admissao >= '2020-01-01' and f.data_admissao <= '2022-12-31';
+
+# 5. Apresentar o nome, cargo e departamento dos funcionários admitidos no ano atual.
+SELECT f.nome, f.cargo, d.nome, f.data_admissao from funcionario f inner join departamento d on f.cod_depto = d.cod_depto where YEAR(f.data_admissao) = YEAR(CURDATE());
+
+# 6. Apresentar o nome, cargo e salário dos funcionários com salário acima de R$ 5.000,00.
+SELECT nome, cargo, salario from funcionario where salario > 5000;
+
+# 7. Apresentar o nome, cargo e salário dos funcionários com salário abaixo de R$ 2.000,00.
+SELECT nome, cargo, salario from funcionario where salario < 2000; 
+
+# 8. Apresentar os funcionários do departamento de ‘vendas’ ou que ocupem cargo de ‘Diretor’ e que tenham sido contratados entre 2018 e 2022.
+SELECT f.nome, d.nome, f.cargo, f.data_admissao from funcionario f inner join departamento d on f.cod_depto = d.cod_depto 
+where f.data_admissao >= '2018-01-01' AND f.data_admissao <= '2022-12-31' AND UPPER(d.nome) = UPPER('vendas') OR UPPER(f.cargo) = UPPER('diretor');

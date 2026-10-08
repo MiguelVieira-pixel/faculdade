@@ -39,6 +39,8 @@ void inserir(Arvore * a, Pessoa p){
 				inserir((Arvore *) &(*a)->esq, p);
 	}
 }
+
+int quantNos = 0;
 	
 void ordem(Arvore a){
 	if(a != NULL){
@@ -52,6 +54,14 @@ void mostra(Pessoa p){
 	printf("\n CPF[%s], %s, %s, %c\n", p.cpf, p.nome, p.apelido, p.sexo);
 }
 
+int contaNos(Arvore a){
+	if(a != NULL){
+		quantNos++;
+		contaNos((Arvore) a->esq);
+		contaNos((Arvore) a->dir);
+		return quantNos;
+	}
+}
 
 
 int main(){
@@ -71,13 +81,22 @@ int main(){
 	inserir(&seringueira, p1);
 	inserir(&seringueira, p2);
 	inserir(&seringueira, p5);
+
 	do{
+		scanf("%d", &opcao);
 		switch(opcao){
 			case 1:
-			printf("\n Digite o cpf: ");
-			
+				printf("\n Digite o cpf: ");
+				break;
+			case 2:{
+				int cont = contaNos(seringueira);
+				printf("\nQuantidade total de nos: %d", cont);
+				break;
+			}
 		}
 	}
+	while(opcao != 4);
+	
 	ordem(seringueira);
 	return 0;	
 }
